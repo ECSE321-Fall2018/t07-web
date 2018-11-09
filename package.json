@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "t07-web",
   "version": "0.1.0",
@@ -32,3 +33,8 @@
     "not ie <= 8"
   ]
 }
+=======
+"scripts": {
+    "heroku-postbuild": "npm run production"
+  }
+>>>>>>> 3d9b41b3d08344db75869922a7cdfbf61851ae25
