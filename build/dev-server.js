@@ -90,3 +90,6 @@ module.exports = {
     server.close()
   }
 }
+
+var host = config.dev.host
+var uri = 'http://' + host + ':' + port
