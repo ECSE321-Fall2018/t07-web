@@ -7,6 +7,11 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+/* custom design imports */
+import './dist/css/bootstrap.min.css'
+import './dashboard.css';
+import './assets/js/ie10-viewport-bug-workaround.js'
+
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
