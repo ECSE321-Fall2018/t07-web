@@ -1,5 +1,12 @@
 # t07-web
 
+### Changelog
+Nov. 17, 2018 (Backend)
+- Changes were made to the backend repository (https://github.com/ECSE321-Fall2018/t07)
+- REST endpoints were added to support the partial matching search functions for passengers, drivers and trips
+- These search endpoints also support status modifiers so you can search for every result, only those that have been on trips or those that are on in progress trips
+- See the other repository for full details
+
 ## Project setup
 ```
 npm install
