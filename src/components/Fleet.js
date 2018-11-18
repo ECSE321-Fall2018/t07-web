@@ -22,6 +22,8 @@ export default {
   data () {
     return {
       trips: [],
+      drivers: [],
+      passengers: [],
       type: 'A',
       title: 'Overview',
     }
@@ -33,7 +35,7 @@ export default {
 	}, 
 	methods: {
 		Overview: function() {
-			this.title = 'Overview';
+			this.title = 'All trips in the system';
 			this.type = 'A';
 			AXIOS.get(`/trips`)
 			.then(response => {
@@ -55,6 +57,32 @@ export default {
 			.then(response => {
 				// JSON responses are automatically parsed.
 				this.trips = response.data
+			})
+			.catch(e => {
+				this.errorParticipant = e;
+			});
+		},
+		ActiveDrivers: function() {
+			this.title = 'Active Drivers';
+			this.type = 'C';
+						
+			AXIOS.post('/users/search/partialDriver?status=enroute')
+			.then(response => {
+				// JSON responses are automatically parsed.
+				this.drivers = response.data
+			})
+			.catch(e => {
+				this.errorParticipant = e;
+			});
+		},
+		ActivePassengers: function() {
+			this.title = 'Active Passengers';
+			this.type = 'D';
+						
+			AXIOS.post('/users/search/partialPassenger?status=enroute')
+			.then(response => {
+				// JSON responses are automatically parsed.
+				this.passengers = response.data
 			})
 			.catch(e => {
 				this.errorParticipant = e;

@@ -31,16 +31,16 @@
 	        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
 	          <ul class="nav nav-pills flex-column">
 	            <li class="nav-item">
-	              <a class="nav-link" v-bind:class="{ active: type === 'A' }" v-on:click="Overview" href="#">Overview</a>
+	              <a class="nav-link" v-bind:class="{ active: type === 'A' }" v-on:click="Overview" href="#">All Trips</a>
 	            </li>
 	            <li class="nav-item">
-	              <a class="nav-link" v-bind:class="{ active: type === 'B' }" v-on:click="ActiveRoutes" href="#">By Routes</a>
+	              <a class="nav-link" v-bind:class="{ active: type === 'B' }" v-on:click="ActiveRoutes" href="#">Active Routes</a>
 	            </li>
 	            <li class="nav-item">
-	              <a class="nav-link" href="#">By Drivers</a>
+	              <a class="nav-link" v-bind:class="{ active: type === 'C' }" v-on:click="ActiveDrivers" href="#">Active Drivers</a>
 	            </li>
 	            <li class="nav-item">
-	              <a class="nav-link" href="#">By Passengers</a>
+	              <a class="nav-link" v-bind:class="{ active: type === 'D' }" v-on:click="ActivePassengers" href="#">Active Passengers</a>
 	            </li>
 	          </ul>
 	        </nav>
@@ -105,8 +105,54 @@
 	              </tbody>
 	            </table>
 	          </div>
-	          
-	          
+
+
+	    	<!-- For Drivers -->
+	          <div class="table-responsive" v-if="type=='C'">
+	            <p>
+	            	For now, it's just showing all ENROUTE drivers. 
+				</p>
+	            <table class="table table-striped" >
+	              <thead>
+	                <tr>
+	                  <th>Driver Name</th>
+	                  <th>Email</th>
+	                  <th>Phone</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	                <tr v-for="driver in drivers">
+	                  <td>{{ driver.firstname }} {{ driver.lastname }}</td>
+	                  <td>{{ driver.email }}</td>
+	                  <td>{{ driver.phone }}</td>
+	                </tr>
+	              </tbody>
+	            </table>
+	          </div>	          
+
+	    	<!-- For Passengers -->
+	          <div class="table-responsive" v-if="type=='D'">
+	            <p>
+	            	For now, it's just showing all ENROUTE passengers. 
+				</p>
+	            <table class="table table-striped" >
+	              <thead>
+	                <tr>
+	                  <th>Passenger Name</th>
+	                  <th>Email</th>
+	                  <th>Phone</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	                <tr v-for="passenger in passengers">
+	                  <td>{{ passenger.firstname }} {{ passenger.lastname }}</td>
+	                  <td>{{ passenger.email }}</td>
+	                  <td>{{ passenger.phone }}</td>
+	                </tr>
+	              </tbody>
+	            </table>
+	          </div>
+  
 	    </main>
 	</div>
 </template>
