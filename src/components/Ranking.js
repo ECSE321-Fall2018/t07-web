@@ -9,26 +9,18 @@ var AXIOS = axios.create({
   headers: { 'Access-Control-Allow-Origin': frontendUrl }
 })
 
-function tripdetails (name, date, time, dep, dest) {
-	this.name = name;
-	this.date = date;
-	this.time = time;
-	this.dep = dep;
-	this.dest = dest;
-}
-
 export default {
-  name: 'Fleet',
+  name: 'Ranking',
   data () {
     return {
-      trips: [],
+      drivers: [],
     }
   },
   created: function () {
-		AXIOS.get(`/trips`)
+		AXIOS.get(`/drivers/ranking`)
 		.then(response => {
 			// JSON responses are automatically parsed.
-			this.trips = response.data
+			this.drivers = response.data
 		})
 		.catch(e => {
 			this.errorParticipant = e;

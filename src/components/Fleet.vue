@@ -1,5 +1,31 @@
 <template>
 	<div id="contents">
+	  <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+      <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">Rideshare Dashboard</a>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <router-link to="/" class="nav-link">Fleet Status <span class="sr-only">(current)</span></router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/ranking" class="nav-link">Ranking</router-link>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Help</a>
+          </li>
+        </ul>
+        <!--
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        -->
+      </div>
+    </nav>
 		<div class="container-fluid">
 	      <div class="row">
 	        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
@@ -52,7 +78,7 @@
 	          <!-- For Active Routes -->
 	          <div class="table-responsive" v-else-if="type=='B'">
 	            <p>
-	            	For now, it's showing all active routes for TODAY. <br />
+	            	For now, it's just showing all trip list for TODAY. <br />
 					We might have to discuss the presentation of each specific options. <br />
 					Could have: Date picker (so provide option to see the data from past). 
 				</p>

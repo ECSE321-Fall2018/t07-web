@@ -9,13 +9,11 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Fleet',
       component: require('../components/Fleet.vue').default
     },
     {
-      path: '/Ranking',
-      name: 'Ranking.vue',
-      component: require('../components/Ranking.vue')
+      path: '/ranking',
+      component: require('../components/Ranking.vue').default
     }
   ]
 })
