@@ -1,6 +1,13 @@
 # t07-web
 
 ### Changelog
+Nov. 18, 2018: (Backend)
+- Additional changes were made to the backend repository (linked below)
+- REST endpoints were added to support the ranking feature (for drivers, passengers and trips)
+- Ranking is done by counting number of trips a driver or passenger was on, or the number of occurrences of a certain route for trip ranking
+- All 3 of the added endpoints support parameters for startDate and endDate that bound the search
+- See the other repository for full details
+
 Nov. 17, 2018
 (Backend)
 - Changes were made to the backend repository (https://github.com/ECSE321-Fall2018/t07)
