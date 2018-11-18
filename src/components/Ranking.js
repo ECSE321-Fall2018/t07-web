@@ -14,22 +14,53 @@ export default {
   data () {
     return {
       drivers: [],
+      passengers: [],
+      trips: [],
+      type: 'A', 
+      title: 'Top Performing Drivers'
     }
   },
   created: function () {
-		AXIOS.get(`/drivers/ranking`)
-		.then(response => {
-			// JSON responses are automatically parsed.
-			this.drivers = response.data
-		})
-		.catch(e => {
-			this.errorParticipant = e;
-		});
+		this.TopDrivers();
 	}, 
 	methods: {
-
+		TopDrivers: function() {
+			this.title = 'Top Performing Drivers';
+			this.type = 'A';
+			AXIOS.post(`/drivers/ranking`)
+			.then(response => {
+				// JSON responses are automatically parsed.
+				this.drivers = response.data
+			})
+			.catch(e => {
+				this.errorParticipant = e;
+			});
+		}, 
+		TopPassengers: function () {
+			this.title = 'Top Performing Passengers';
+			this.type = 'B';
+			AXIOS.post(`/passengers/ranking`)
+			.then(response => {
+				// JSON responses are automatically parsed.
+				this.passengers = response.data
+			})
+			.catch(e => {
+				this.errorParticipant = e;
+			});
+		}, 
+		TopRoutes: function () {
+			this.title = 'Top Popular Routes';
+			this.type = 'C';
+			AXIOS.post(`/trips/ranking`)
+			.then(response => {
+				// JSON responses are automatically parsed.
+				this.trips = response.data
+			})
+			.catch(e => {
+				this.errorParticipant = e;
+			});
+		}
 	}
 }
-
 
 

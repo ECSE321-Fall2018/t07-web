@@ -31,24 +31,23 @@
 	        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
 	          <ul class="nav nav-pills flex-column">
 	            <li class="nav-item">
-	              <a class="nav-link active" href="#">Overview <span class="sr-only">(current)</span></a>
+	              <a class="nav-link" v-bind:class="{ active: type === 'A' }" v-on:click="TopDrivers" href="#">Top Drivers <span class="sr-only">(current)</span></a>
 	            </li>
 	            <li class="nav-item">
-	              <a class="nav-link" href="/FleetRoutes">By Routes</a>
+	              <a class="nav-link" v-bind:class="{ active: type === 'B' }" v-on:click="TopPassengers" href="#">Top Passengers</a>
 	            </li>
 	            <li class="nav-item">
-	              <a class="nav-link" href="/FleetDrivers">By Drivers</a>
-	            </li>
-	            <li class="nav-item">
-	              <a class="nav-link" href="/FleetPassengers">By Passengers</a>
+	              <a class="nav-link" v-bind:class="{ active: type === 'C' }" v-on:click="TopRoutes" href="#">Top Routes</a>
 	            </li>
 	          </ul>
 	        </nav>
 	      </div>
 	    </div>
 	    <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-	    	<h1>Top Performing Drivers</h1>
-	          <div class="table-responsive">
+	    	<h1>{{ title }}</h1>
+	    	
+	    	<!-- For TopDrivers -->
+	          <div class="table-responsive"  v-if="type=='A'"> 
 	            <table class="table table-striped">
 	              <thead>
 	                <tr>
@@ -66,6 +65,47 @@
 	              </tbody>
 	            </table>
 	          </div>
+
+	    	<!-- For TopPassengers -->
+	          <div class="table-responsive"  v-if="type=='B'"> 
+	            <table class="table table-striped">
+	              <thead>
+	                <tr>
+	                  <th># of Trips</th>
+	                  <th>Passenger Name</th>
+	                  <th>E-mail</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	                <tr v-for="passenger in passengers">
+	                  <td>{{ passenger.count }}</td>
+	                  <td>{{ passenger.firstname }} {{ passenger.lastname }}</td>
+	                  <td>{{ passenger.email }}</td>
+	                </tr>
+	              </tbody>
+	            </table>
+	          </div>	          
+
+	    	<!-- For TopRoutes -->
+	          <div class="table-responsive"  v-if="type=='C'"> 
+	            <table class="table table-striped">
+	              <thead>
+	                <tr>
+	                  <th>Frequency</th>
+	                  <th>Departure Location</th>
+	                  <th>Destination(s)</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	                <tr v-for="trip in trips">
+	                  <td>{{ trip.count }}</td>
+	                  <td>{{ trip.departure_location }}</td>
+	                  <td>{{ trip.destinations }}</td>
+	                </tr>
+	              </tbody>
+	            </table>
+	          </div>	   
+	          
 	    </main>
 	</div>
 </template>
