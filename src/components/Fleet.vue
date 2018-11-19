@@ -111,9 +111,10 @@
 
 	    	<!-- For Drivers -->
 	          <div class="table-responsive" v-if="type=='C'">
-	            <p>
-	            	For now, it's just showing all ENROUTE drivers. 
-				</p>
+	          Search by keyword: <input type="text" v-model="keyword" placeholder="">
+	          <input type="checkbox" v-model="enroute" value="enroute" checked>  Show enroute drivers only
+	          <button @click="filterByKeyword()">Update</button>
+	          
 	            <table class="table table-striped" >
 	              <thead>
 	                <tr>
@@ -134,9 +135,19 @@
 
 	    	<!-- For Passengers -->
 	          <div class="table-responsive" v-if="type=='D'">
-	            <p>
-	            	For now, it's just showing all ENROUTE passengers. 
-				</p>
+	          Search by keyword: <input type="text" v-model="keyword" placeholder=""><br />
+	          
+	           <input type="radio" id="registered" value="registered" v-model="picked">
+	          <label for="registered">Registered</label>
+	          
+	          <input type="radio" id="active" value="active" v-model="picked">
+	          <label for="active">Active</label>
+	          
+	          <input type="radio" id="enroute" value="enroute" v-model="picked">
+	          <label for="enroute">Enroute</label>
+
+	          <button @click="filterByKeyword()">Update</button>
+	          
 	            <table class="table table-striped" >
 	              <thead>
 	                <tr>

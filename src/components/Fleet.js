@@ -27,7 +27,8 @@ export default {
       type: 'A',		// this enables 'active' style for tab
       title: 'Overview',		// page title h1
       keyword: '',
-      enroute: ''
+      enroute: '',
+      picked: 'registered'
     }
   },
   created: function () {
@@ -110,8 +111,13 @@ export default {
 		ActiveDrivers: function() {
 			this.title = 'Active Drivers';
 			this.type = 'C';
-						
-			AXIOS.post('/users/search/partialDriver?status=enroute')
+			
+			var myenroute = "all";
+			if (this.enroute) {
+				myenroute = "enroute";
+			}
+									
+			AXIOS.post("/users/search/partialDriver?keyword=" + this.keyword + "&status=" + myenroute)
 			.then(response => {
 				// JSON responses are automatically parsed.
 				this.drivers = response.data
@@ -127,8 +133,10 @@ export default {
 		ActivePassengers: function() {
 			this.title = 'Active Passengers';
 			this.type = 'D';
+			
+			var myenroute = this.picked;
 						
-			AXIOS.post('/users/search/partialPassenger?status=enroute')
+			AXIOS.post("/users/search/partialPassenger?keyword=" + this.keyword + "&status=" + myenroute)
 			.then(response => {
 				// JSON responses are automatically parsed.
 				this.passengers = response.data
