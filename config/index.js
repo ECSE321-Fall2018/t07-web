@@ -36,6 +36,6 @@ module.exports = {
     // just be aware of this issue when enabling this option.
     cssSourceMap: false,
     backendHost: 'ecse321-group7.herokuapp.com',
-    backendPort: 443
+    backendPort: 80
   }
 }
