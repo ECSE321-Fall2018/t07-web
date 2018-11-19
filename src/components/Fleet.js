@@ -26,6 +26,8 @@ export default {
       passengers: [],	// also user-based list (Passenger)
       type: 'A',		// this enables 'active' style for tab
       title: 'Overview',		// page title h1
+      keyword: '',
+      enroute: ''
     }
   },
   created: function () {
@@ -34,6 +36,20 @@ export default {
   		this.Overview();
 	}, 
 	methods: {
+		filterByKeyword: function () {
+			if (this.type == 'A') {
+				this.Overview();
+			}
+			else if (this.type == 'B') {
+				this.ActiveRoutes();
+			}
+			else if (this.type == 'C') {
+				this.ActiveDrivers();
+			}
+			else if (this.type == 'D') {
+				this.ActivePassengers();
+			}
+		},
 		Overview: function() {
 			this.title = 'All trips in the system';
 			this.type = 'A';
@@ -63,10 +79,13 @@ export default {
 			this.title = 'Active Routes';
 			this.type = 'B';
 			
-			var date=new Date(); 
-			var today = date.getFullYear() + "-"+(date.getMonth()+1)+"-"+date.getDate();
-						
-			AXIOS.post(`/trips/search?date=` + today)
+			var myenroute = "all";
+			
+			if (this.enroute) {
+				myenroute = "enroute";
+			}
+			
+			AXIOS.post("/trips/search/partial?keyword=" + this.keyword + "&status=" + myenroute)
 			.then(response => {
 				// JSON responses are automatically parsed.
 				this.trips = response.data

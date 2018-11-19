@@ -77,11 +77,10 @@
 	          
 	          <!-- For Active Routes -->
 	          <div class="table-responsive" v-else-if="type=='B'">
-	            <p>
-	            	For now, it's just showing all trip list for TODAY. <br />
-					We might have to discuss the presentation of each specific options. <br />
-					Could have: Date picker (so provide option to see the data from past). 
-				</p>
+	          Search by keyword: <input type="text" v-model="keyword" placeholder="">
+	          <input type="checkbox" v-model="enroute" value="enroute" checked>  Show enroute trips only
+	          <button @click="filterByKeyword()">Update</button>
+	          
 	            <table class="table table-striped" >
 	              <thead>
 	                <tr>
