@@ -1,8 +1,12 @@
 # t07-web
 
 ### Changelog
-Nov. 18, 2018: 
+Nov. 19, 2018: (Frontend)
+- Minor typo fixes to some of the text
+- Formatting changes to text such that names and locations are displayed with capitalized first letters
+- Display of the destinations was also altered to remove the brackets and quotes
 
+Nov. 18, 2018: 
 (Backend)
 - Additional changes were made to the backend repository (linked below)
 - REST endpoints were added to support the ranking feature (for drivers, passengers and trips)
