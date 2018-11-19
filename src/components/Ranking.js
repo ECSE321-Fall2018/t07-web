@@ -17,17 +17,34 @@ export default {
       passengers: [],
       trips: [],
       type: 'A', 		// this enables 'active' style for tab
-      title: 'Top Performing Drivers'		// page title h1
+      title: 'Top Performing Drivers'	,	// page title h1
+      startDate: '2018-10-01',
+      endDate: ''
     }
   },
   created: function () {
+  		var date=new Date(); 
+		var today = date.getFullYear() + "-"+(date.getMonth()+1)+"-"+date.getDate();
+  	    this.endDate = today;
 		this.TopDrivers();
 	}, 
 	methods: {
+		filterByDate: function() {
+			if (this.type == 'A') {
+				this.TopDrivers();
+			}
+			else if (this.type == 'B') {
+				this.TopPassengers();
+			}
+			else if (this.type == 'C') {
+				this.TopRoutes();
+			}
+		},
 		TopDrivers: function() {
 			this.title = 'Top Performing Drivers';
 			this.type = 'A';
-			AXIOS.post(`/drivers/ranking`)
+			
+			AXIOS.post("/drivers/ranking?startDate=" + this.startDate + "&endDate=" + this.endDate)
 			.then(response => {
 				// JSON responses are automatically parsed.
 				this.drivers = response.data
@@ -43,7 +60,7 @@ export default {
 		TopPassengers: function () {
 			this.title = 'Top Performing Passengers';
 			this.type = 'B';
-			AXIOS.post(`/passengers/ranking`)
+			AXIOS.post("/passengers/ranking?startDate=" + this.startDate + "&endDate=" + this.endDate)
 			.then(response => {
 				// JSON responses are automatically parsed.
 				this.passengers = response.data
@@ -59,7 +76,7 @@ export default {
 		TopRoutes: function () {
 			this.title = 'Top Routes';
 			this.type = 'C';
-			AXIOS.post(`/trips/ranking`)
+			AXIOS.post("/trips/ranking?startDate=" + this.startDate + "&endDate=" + this.endDate)
 			.then(response => {
 				// JSON responses are automatically parsed.
 				this.trips = response.data

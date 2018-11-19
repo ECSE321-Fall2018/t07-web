@@ -45,6 +45,10 @@
 	    	
 	    	<!-- For TopDrivers -->
 	          <div class="table-responsive"  v-if="type=='A'"> 
+	          From: <input type="date" v-model="startDate" placeholder="YYYY-MM-DD">
+	          To: <input type="date" v-model="endDate" placeholder="YYYY-MM-DD">
+	          <button @click="filterByDate()">Update</button>
+	          
 	            <table class="table table-striped">
 	              <thead>
 	                <tr>
@@ -65,6 +69,10 @@
 
 	    	<!-- For TopPassengers -->
 	          <div class="table-responsive"  v-if="type=='B'"> 
+	          From: <input type="date" v-model="startDate" placeholder="YYYY-MM-DD">
+	          To: <input type="date" v-model="endDate" placeholder="YYYY-MM-DD">
+	          <button @click="filterByDate()">Update</button>
+	          
 	            <table class="table table-striped">
 	              <thead>
 	                <tr>
@@ -85,6 +93,10 @@
 
 	    	<!-- For TopRoutes -->
 	          <div class="table-responsive"  v-if="type=='C'"> 
+	          From: <input type="date" v-model="startDate" placeholder="YYYY-MM-DD">
+	          To: <input type="date" v-model="endDate" placeholder="YYYY-MM-DD">
+	          <button @click="filterByDate()">Update</button>
+	          
 	            <table class="table table-striped">
 	              <thead>
 	                <tr>
