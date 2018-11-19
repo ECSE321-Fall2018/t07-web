@@ -13,11 +13,11 @@ export default {
   name: 'Ranking',
   data () {
     return {
-      drivers: [],
+      drivers: [],	// each list for each ranking
       passengers: [],
       trips: [],
-      type: 'A', 
-      title: 'Top Performing Drivers'
+      type: 'A', 		// this enables 'active' style for tab
+      title: 'Top Performing Drivers'		// page title h1
     }
   },
   created: function () {

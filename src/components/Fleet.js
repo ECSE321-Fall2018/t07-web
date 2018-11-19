@@ -21,11 +21,11 @@ export default {
   name: 'Fleet',
   data () {
     return {
-      trips: [],
-      drivers: [],
-      passengers: [],
-      type: 'A',
-      title: 'Overview',
+      trips: [],	// for trip-record-based list (ALL)
+      drivers: [],	// user-based list (Driver)
+      passengers: [],	// also user-based list (Passenger)
+      type: 'A',		// this enables 'active' style for tab
+      title: 'Overview',		// page title h1
     }
   },
   created: function () {

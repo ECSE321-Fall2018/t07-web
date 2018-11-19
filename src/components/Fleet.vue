@@ -14,9 +14,6 @@
           <li class="nav-item">
             <router-link to="/ranking" class="nav-link">Ranking</router-link>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Help</a>
-          </li>
         </ul>
         <!--
         <form class="form-inline mt-2 mt-md-0">
