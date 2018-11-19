@@ -49,7 +49,7 @@ export default {
 			});
 		}, 
 		TopRoutes: function () {
-			this.title = 'Top Popular Routes';
+			this.title = 'Top Routes';
 			this.type = 'C';
 			AXIOS.post(`/trips/ranking`)
 			.then(response => {

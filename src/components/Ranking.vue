@@ -12,7 +12,7 @@
             <router-link to="/" class="nav-link">Fleet Status</router-link>
           </li>
           <li class="nav-item active">
-            <router-link to="/ranking" class="nav-link">Rankings <span class="sr-only">(current)</span></router-link>
+            <router-link to="/ranking" class="nav-link">Ranking <span class="sr-only">(current)</span></router-link>
           </li>
         </ul>
         <!--

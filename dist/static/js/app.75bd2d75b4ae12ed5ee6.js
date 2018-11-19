@@ -77,6 +77,17 @@ module.exports = {
 
 /***/ }),
 
+/***/ "GNdC":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"contents"}},[_c('nav',{staticClass:"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse"},[_vm._m(0),_vm._v(" "),_c('a',{staticClass:"navbar-brand",attrs:{"href":"#"}},[_vm._v("Rideshare Dashboard")]),_vm._v(" "),_c('div',{staticClass:"collapse navbar-collapse",attrs:{"id":"navbarsExampleDefault"}},[_c('ul',{staticClass:"navbar-nav mr-auto"},[_c('li',{staticClass:"nav-item"},[_c('router-link',{staticClass:"nav-link",attrs:{"to":"/"}},[_vm._v("Fleet Status")])],1),_vm._v(" "),_c('li',{staticClass:"nav-item active"},[_c('router-link',{staticClass:"nav-link",attrs:{"to":"/ranking"}},[_vm._v("Ranking "),_c('span',{staticClass:"sr-only"},[_vm._v("(current)")])])],1)])])]),_vm._v(" "),_c('div',{staticClass:"container-fluid"},[_c('div',{staticClass:"row"},[_c('nav',{staticClass:"col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar"},[_c('ul',{staticClass:"nav nav-pills flex-column"},[_c('li',{staticClass:"nav-item"},[_c('a',{staticClass:"nav-link",class:{ active: _vm.type === 'A' },attrs:{"href":"#"},on:{"click":_vm.TopDrivers}},[_vm._v("Top Drivers "),_c('span',{staticClass:"sr-only"},[_vm._v("(current)")])])]),_vm._v(" "),_c('li',{staticClass:"nav-item"},[_c('a',{staticClass:"nav-link",class:{ active: _vm.type === 'B' },attrs:{"href":"#"},on:{"click":_vm.TopPassengers}},[_vm._v("Top Passengers")])]),_vm._v(" "),_c('li',{staticClass:"nav-item"},[_c('a',{staticClass:"nav-link",class:{ active: _vm.type === 'C' },attrs:{"href":"#"},on:{"click":_vm.TopRoutes}},[_vm._v("Top Routes")])])])])])]),_vm._v(" "),_c('main',{staticClass:"col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3"},[_c('h1',[_vm._v(_vm._s(_vm.title))]),_vm._v(" "),(_vm.type=='A')?_c('div',{staticClass:"table-responsive"},[_c('table',{staticClass:"table table-striped"},[_vm._m(1),_vm._v(" "),_c('tbody',_vm._l((_vm.drivers),function(driver){return _c('tr',[_c('td',[_vm._v(_vm._s(driver.count))]),_vm._v(" "),_c('td',[_vm._v(_vm._s(driver.firstname)+" "+_vm._s(driver.lastname))]),_vm._v(" "),_c('td',[_vm._v(_vm._s(driver.email))])])}))])]):_vm._e(),_vm._v(" "),(_vm.type=='B')?_c('div',{staticClass:"table-responsive"},[_c('table',{staticClass:"table table-striped"},[_vm._m(2),_vm._v(" "),_c('tbody',_vm._l((_vm.passengers),function(passenger){return _c('tr',[_c('td',[_vm._v(_vm._s(passenger.count))]),_vm._v(" "),_c('td',[_vm._v(_vm._s(passenger.firstname)+" "+_vm._s(passenger.lastname))]),_vm._v(" "),_c('td',[_vm._v(_vm._s(passenger.email))])])}))])]):_vm._e(),_vm._v(" "),(_vm.type=='C')?_c('div',{staticClass:"table-responsive"},[_c('table',{staticClass:"table table-striped"},[_vm._m(3),_vm._v(" "),_c('tbody',_vm._l((_vm.trips),function(trip){return _c('tr',[_c('td',[_vm._v(_vm._s(trip.count))]),_vm._v(" "),_c('td',[_vm._v(_vm._s(trip.departure_location))]),_vm._v(" "),_c('td',[_vm._v(_vm._s(trip.destinations))])])}))])]):_vm._e()])])}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"navbar-toggler navbar-toggler-right hidden-lg-up",attrs:{"type":"button","data-toggle":"collapse","data-target":"#navbarsExampleDefault","aria-controls":"navbarsExampleDefault","aria-expanded":"false","aria-label":"Toggle navigation"}},[_c('span',{staticClass:"navbar-toggler-icon"})])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('thead',[_c('tr',[_c('th',[_vm._v("# of Trips")]),_vm._v(" "),_c('th',[_vm._v("Driver Name")]),_vm._v(" "),_c('th',[_vm._v("E-mail")])])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('thead',[_c('tr',[_c('th',[_vm._v("# of Trips")]),_vm._v(" "),_c('th',[_vm._v("Passenger Name")]),_vm._v(" "),_c('th',[_vm._v("E-mail")])])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('thead',[_c('tr',[_c('th',[_vm._v("Frequency")]),_vm._v(" "),_c('th',[_vm._v("Departure Location")]),_vm._v(" "),_c('th',[_vm._v("Destination(s)")])])])}]
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+
+/***/ }),
+
 /***/ "GfHa":
 /***/ (function(module, exports) {
 
@@ -329,14 +340,10 @@ module.exports = merge(prodEnv, {
 
 /***/ }),
 
-/***/ "iGpL":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "eWgq":
+/***/ (function(module, exports) {
 
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"contents"}},[_c('nav',{staticClass:"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse"},[_vm._m(0),_vm._v(" "),_c('a',{staticClass:"navbar-brand",attrs:{"href":"#"}},[_vm._v("Rideshare Dashboard")]),_vm._v(" "),_c('div',{staticClass:"collapse navbar-collapse",attrs:{"id":"navbarsExampleDefault"}},[_c('ul',{staticClass:"navbar-nav mr-auto"},[_c('li',{staticClass:"nav-item"},[_c('router-link',{staticClass:"nav-link",attrs:{"to":"/"}},[_vm._v("Fleet Status")])],1),_vm._v(" "),_c('li',{staticClass:"nav-item active"},[_c('router-link',{staticClass:"nav-link",attrs:{"to":"/ranking"}},[_vm._v("Rankings "),_c('span',{staticClass:"sr-only"},[_vm._v("(current)")])])],1)])])]),_vm._v(" "),_c('div',{staticClass:"container-fluid"},[_c('div',{staticClass:"row"},[_c('nav',{staticClass:"col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar"},[_c('ul',{staticClass:"nav nav-pills flex-column"},[_c('li',{staticClass:"nav-item"},[_c('a',{staticClass:"nav-link",class:{ active: _vm.type === 'A' },attrs:{"href":"#"},on:{"click":_vm.TopDrivers}},[_vm._v("Top Drivers "),_c('span',{staticClass:"sr-only"},[_vm._v("(current)")])])]),_vm._v(" "),_c('li',{staticClass:"nav-item"},[_c('a',{staticClass:"nav-link",class:{ active: _vm.type === 'B' },attrs:{"href":"#"},on:{"click":_vm.TopPassengers}},[_vm._v("Top Passengers")])]),_vm._v(" "),_c('li',{staticClass:"nav-item"},[_c('a',{staticClass:"nav-link",class:{ active: _vm.type === 'C' },attrs:{"href":"#"},on:{"click":_vm.TopRoutes}},[_vm._v("Top Routes")])])])])])]),_vm._v(" "),_c('main',{staticClass:"col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3"},[_c('h1',[_vm._v(_vm._s(_vm.title))]),_vm._v(" "),(_vm.type=='A')?_c('div',{staticClass:"table-responsive"},[_c('table',{staticClass:"table table-striped"},[_vm._m(1),_vm._v(" "),_c('tbody',_vm._l((_vm.drivers),function(driver){return _c('tr',[_c('td',[_vm._v(_vm._s(driver.count))]),_vm._v(" "),_c('td',[_vm._v(_vm._s(driver.firstname)+" "+_vm._s(driver.lastname))]),_vm._v(" "),_c('td',[_vm._v(_vm._s(driver.email))])])}))])]):_vm._e(),_vm._v(" "),(_vm.type=='B')?_c('div',{staticClass:"table-responsive"},[_c('table',{staticClass:"table table-striped"},[_vm._m(2),_vm._v(" "),_c('tbody',_vm._l((_vm.passengers),function(passenger){return _c('tr',[_c('td',[_vm._v(_vm._s(passenger.count))]),_vm._v(" "),_c('td',[_vm._v(_vm._s(passenger.firstname)+" "+_vm._s(passenger.lastname))]),_vm._v(" "),_c('td',[_vm._v(_vm._s(passenger.email))])])}))])]):_vm._e(),_vm._v(" "),(_vm.type=='C')?_c('div',{staticClass:"table-responsive"},[_c('table',{staticClass:"table table-striped"},[_vm._m(3),_vm._v(" "),_c('tbody',_vm._l((_vm.trips),function(trip){return _c('tr',[_c('td',[_vm._v(_vm._s(trip.count))]),_vm._v(" "),_c('td',[_vm._v(_vm._s(trip.departure_location))]),_vm._v(" "),_c('td',[_vm._v(_vm._s(trip.destinations))])])}))])]):_vm._e()])])}
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"navbar-toggler navbar-toggler-right hidden-lg-up",attrs:{"type":"button","data-toggle":"collapse","data-target":"#navbarsExampleDefault","aria-controls":"navbarsExampleDefault","aria-expanded":"false","aria-label":"Toggle navigation"}},[_c('span',{staticClass:"navbar-toggler-icon"})])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('thead',[_c('tr',[_c('th',[_vm._v("# of Trips")]),_vm._v(" "),_c('th',[_vm._v("Driver Name")]),_vm._v(" "),_c('th',[_vm._v("E-mail")])])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('thead',[_c('tr',[_c('th',[_vm._v("# of Trips")]),_vm._v(" "),_c('th',[_vm._v("Passenger Name")]),_vm._v(" "),_c('th',[_vm._v("E-mail")])])])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('thead',[_c('tr',[_c('th',[_vm._v("Frequency")]),_vm._v(" "),_c('th',[_vm._v("Departure Location")]),_vm._v(" "),_c('th',[_vm._v("Destination(s)")])])])}]
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -410,7 +417,7 @@ var AXIOS = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
 			});
 		},
 		TopRoutes: function () {
-			this.title = 'Top Popular Routes';
+			this.title = 'Top Routes';
 			this.type = 'C';
 			AXIOS.post(`/trips/ranking`).then(response => {
 				// JSON responses are automatically parsed.
@@ -456,9 +463,9 @@ var AXIOS = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_Ranking_js__ = __webpack_require__("sFgU");
 /* empty harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_232a832a_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Ranking_vue__ = __webpack_require__("iGpL");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1de1e685_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Ranking_vue__ = __webpack_require__("GNdC");
 function injectStyle (ssrContext) {
-  __webpack_require__("z76I")
+  __webpack_require__("eWgq")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -475,7 +482,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_Ranking_js__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_232a832a_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Ranking_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1de1e685_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Ranking_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -487,13 +494,6 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ "z76I":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "zj2Q":
 /***/ (function(module, exports) {
 
@@ -502,4 +502,4 @@ var Component = normalizeComponent(
 /***/ })
 
 },["NHnr"]);
-//# sourceMappingURL=app.d381d7d2c1f134c75a6d.js.map
+//# sourceMappingURL=app.75bd2d75b4ae12ed5ee6.js.map
