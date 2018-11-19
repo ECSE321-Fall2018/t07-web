@@ -187,8 +187,8 @@ var Component = normalizeComponent(
 
 var config = __webpack_require__("FhoZ");
 
-var frontendUrl = 'http://' + config.dev.host + ':' + config.dev.port;
-var backendUrl = 'http://' + config.dev.backendHost + ':' + config.dev.backendPort;
+var frontendUrl = 'https://' + config.dev.host + ':' + config.dev.port;
+var backendUrl = 'https://' + config.dev.backendHost;
 
 var AXIOS = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
 	baseURL: backendUrl,
@@ -355,8 +355,8 @@ module.exports = {
 
 var config = __webpack_require__("FhoZ");
 
-var frontendUrl = 'http://' + config.dev.host + ':' + config.dev.port;
-var backendUrl = 'http://' + config.dev.backendHost + ':' + config.dev.backendPort;
+var frontendUrl = 'https://' + config.dev.host + ':' + config.dev.port;
+var backendUrl = 'https://' + config.dev.backendHost;
 
 var AXIOS = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
 	baseURL: backendUrl,
@@ -502,4 +502,4 @@ var Component = normalizeComponent(
 /***/ })
 
 },["NHnr"]);
-//# sourceMappingURL=app.060b1a8a31779be60ab3.js.map
+//# sourceMappingURL=app.25d664b8ca625bdb055f.js.map
