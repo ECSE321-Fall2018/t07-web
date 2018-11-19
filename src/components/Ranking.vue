@@ -97,7 +97,10 @@
 	                <tr v-for="trip in trips">
 	                  <td>{{ trip.count }}</td>
 	                  <td>{{ trip.departure_location }}</td>
-	                  <td>{{ trip.destinations }}</td>
+	                  <td>
+	                  	<span v-for="destination in trip.destinations">{{ destination }}</span>
+
+	                  </td>
 	                </tr>
 	              </tbody>
 	            </table>

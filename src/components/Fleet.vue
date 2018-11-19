@@ -66,7 +66,10 @@
 	                  <td>{{ trip.departure_date }}</td>
 	                  <td>{{ trip.departure_time }}</td>
 	                  <td>{{ trip.departure_location }}</td>
-	                  <td>{{ trip.destinations }}</td>
+	                  <td>
+	                  	<span v-for="destination in trip.destinations">{{ destination }}</span>
+
+	                  </td>
 	                </tr>
 	              </tbody>
 	            </table>
@@ -97,7 +100,10 @@
 	                  <td>{{ trip.departure_date }}</td>
 	                  <td>{{ trip.departure_time }}</td>
 	                  <td>{{ trip.departure_location }}</td>
-	                  <td>{{ trip.destinations }}</td>
+	                  <td>
+	                  	<span v-for="destination in trip.destinations">{{ destination }}</span>
+
+	                  </td>
 	                </tr>
 	              </tbody>
 	            </table>

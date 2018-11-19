@@ -31,6 +31,10 @@ export default {
 			.then(response => {
 				// JSON responses are automatically parsed.
 				this.drivers = response.data
+				for (var i=0; i<this.drivers.length; i++) {
+					this.drivers[i].firstname = this.drivers[i].firstname.charAt(0).toUpperCase() + this.drivers[i].firstname.slice(1);
+					this.drivers[i].lastname = this.drivers[i].lastname.charAt(0).toUpperCase() + this.drivers[i].lastname.slice(1);
+				}
 			})
 			.catch(e => {
 				this.errorParticipant = e;
@@ -43,6 +47,10 @@ export default {
 			.then(response => {
 				// JSON responses are automatically parsed.
 				this.passengers = response.data
+				for (var i=0; i<this.passengers.length; i++) {
+					this.passengers[i].firstname = this.passengers[i].firstname.charAt(0).toUpperCase() + this.passengers[i].firstname.slice(1);
+					this.passengers[i].lastname = this.passengers[i].lastname.charAt(0).toUpperCase() + this.passengers[i].lastname.slice(1);
+				}
 			})
 			.catch(e => {
 				this.errorParticipant = e;
@@ -55,6 +63,17 @@ export default {
 			.then(response => {
 				// JSON responses are automatically parsed.
 				this.trips = response.data
+				for (var i=0; i<this.trips.length; i++) {
+					this.trips[i].departure_location = this.trips[i].departure_location.charAt(0).toUpperCase() + this.trips[i].departure_location.slice(1);
+					
+					for (var j=0; j<this.trips[i].destinations.length; j++) {
+						this.trips[i].destinations[j] = this.trips[i].destinations[j].charAt(0).toUpperCase() + this.trips[i].destinations[j].slice(1);
+
+						if (j != this.trips[i].destinations.length-1) {
+							this.trips[i].destinations[j] += ", ";
+						}
+					}
+				}
 			})
 			.catch(e => {
 				this.errorParticipant = e;
