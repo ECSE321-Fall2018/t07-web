@@ -5,6 +5,10 @@ Nov. 19, 2018: (Frontend)
 - Minor typo fixes to some of the text
 - Formatting changes to text such that names and locations are displayed with capitalized first letters
 - Display of the destinations was also altered to remove the brackets and quotes
+- Searching implemented for fleet status
+- Filtering active/inactive trips, drivers and passengers implemented for fleet status
+- Filtering by date implemented for ranking
+- Backend bugfix and new feature (see backend commit upto 4e83cc0)
 
 Nov. 18, 2018: 
 (Backend)
