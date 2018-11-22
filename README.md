@@ -1,6 +1,17 @@
 # t07-web
 
+HOW TO USE:
+-The Web Page can be found at the following link: https://ecse321-group7-web.herokuapp.com/#/
+- The first time it is opened, it may take a few seconds for the data to populate on the page
+
+NOTE:
+- Changes were also made to the backend as part of this Sprint 3, more details at the backend repository
+- Repository Link: https://github.com/ECSE321-Fall2018/t07
+
 ### Changelog
+Nov. 22, 2018: (Frontend)
+- Minor changes to wording and text presentation across the different views of the web page
+
 Nov. 19, 2018: (Frontend)
 - Minor typo fixes to some of the text
 - Formatting changes to text such that names and locations are displayed with capitalized first letters
