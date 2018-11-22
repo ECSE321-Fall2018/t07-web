@@ -14,15 +14,16 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "body-parser": "*",
     "bootstrap": "^4.0.0-beta.2",
+    "bootstrap-loader": "^3.0.2",
     "bootstrap-vue": "latest",
+    "express": "^4.16.4",
     "jquery": "^3.3.1",
     "moment": "^2.22.2",
     "popper.js": "^1.12.9",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1",
-    "express": "^4.16.4",
-    "body-parser": "*"
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -65,6 +66,7 @@
     "optimize-css-assets-webpack-plugin": "^2.0.0",
     "ora": "^1.2.0",
     "phantomjs-prebuilt": "^2.1.14",
+    "postcss-loader": "^3.0.0",
     "rimraf": "^2.6.0",
     "selenium-server": "^3.0.1",
     "semver": "^5.3.0",

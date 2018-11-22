@@ -1,5 +1,10 @@
 <template>
 	<div id="contents">
+
+		<div id="load_screen">
+			<div id="loading"> loading... </div>
+  	</div>
+
 	  <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
       <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,6 +28,7 @@
         -->
       </div>
     </nav>
+
 		<div class="container-fluid">
 	      <div class="row">
 	        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
@@ -51,10 +57,10 @@
 	            <table class="table table-striped" >
 	              <thead>
 	                <tr>
-	                  <th>Completed</th>
-	                  <th>Driver</th>
-	                  <th>Date</th>
-	                  <th>Time</th>
+	                  <th width="11%">Completed</th>
+	                  <th width="15%">Driver</th>
+	                  <th width="11%">Date</th>
+	                  <th width="11%">Time</th>
 	                  <th>Departure</th>
 	                  <th>Destination</th>
 	                </tr>
@@ -78,16 +84,18 @@
 	          <!-- For Active Routes -->
 	          <div class="table-responsive" v-else-if="type=='B'">
 	          Search by keyword: <input type="text" v-model="keyword" placeholder="">
-	          <input type="checkbox" v-model="enroute" value="enroute" checked>  Show enroute trips only
-	          <button @click="filterByKeyword()">Update</button>
+	          <span>&nbsp; &nbsp;</span>
+						<input type="checkbox" v-model="enroute" value="enroute" checked>  Show enroute trips only
+	          <span>&nbsp; &nbsp;</span>
+						<button type="button" class="btn btn-success" @click="filterByKeyword()">Update</button>
 	          
 	            <table class="table table-striped" >
 	              <thead>
 	                <tr>
-	                  <th>Active</th>
-	                  <th>Driver</th>
-	                  <th>Date</th>
-	                  <th>Time</th>
+	                  <th width="11%">Active</th>
+	                  <th width="15%">Driver</th>
+	                  <th width="11%">Date</th>
+	                  <th width="11%">Time</th>
 	                  <th>Departure</th>
 	                  <th>Destination</th>
 	                </tr>
@@ -111,9 +119,11 @@
 
 	    	<!-- For Drivers -->
 	          <div class="table-responsive" v-if="type=='C'">
-	          Search by keyword: <input type="text" v-model="keyword" placeholder="">
-	          <input type="checkbox" v-model="enroute" value="enroute" checked>  Show enroute drivers only
-	          <button @click="filterByKeyword()">Update</button>
+	          Search by keyword:&nbsp; <input type="text" v-model="keyword" placeholder="">
+	          <span>&nbsp; &nbsp;</span>
+						<input type="checkbox" v-model="enroute" value="enroute" checked>  Show enroute drivers only
+	          <span>&nbsp; &nbsp;</span>
+						<button type="button" class="btn btn-success" @click="filterByKeyword()">Update</button>
 	          
 	            <table class="table table-striped" >
 	              <thead>
@@ -135,18 +145,18 @@
 
 	    	<!-- For Passengers -->
 	          <div class="table-responsive" v-if="type=='D'">
-	          Search by keyword: <input type="text" v-model="keyword" placeholder=""><br />
+	          Search by keyword: &nbsp; <input class="form-group col-lg-2.9" type="text" v-model="keyword" placeholder=""><br />
 	          
-	           <input type="radio" id="registered" value="registered" v-model="picked">
-	          <label for="registered">Registered</label>
+	          <input type="radio" id="registered" value="registered" v-model="picked">
+	          <label for="registered">Registered &nbsp;</label>
 	          
 	          <input type="radio" id="active" value="active" v-model="picked">
-	          <label for="active">Active</label>
+	          <label for="active"> Active &nbsp; </label>
 	          
 	          <input type="radio" id="enroute" value="enroute" v-model="picked">
-	          <label for="enroute">Enroute</label>
+	          <label for="enroute">Enroute &nbsp;</label>
 
-	          <button @click="filterByKeyword()">Update</button>
+	          <button type="button" class="btn btn-success" @click="filterByKeyword()">Update</button>
 	          
 	            <table class="table table-striped" >
 	              <thead>
@@ -170,7 +180,7 @@
 	</div>
 </template>
 
-<style>
-</style>
+<style></style>
 
-<script src="./Fleet.js"></script>
+<script src="./Fleet.js">
+</script>
