@@ -43,7 +43,7 @@
 	    <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
 	    	<h1>{{ title }}</h1>
 	    	
-	    	<!-- For TopDrivers -->
+	    	<!-- For Top Drivers -->
 	          <div class="table-responsive"  v-if="type=='A'"> 
 	          From: <input type="date" v-model="startDate" placeholder="YYYY-MM-DD">
 	          <span>&nbsp; &nbsp;</span>
@@ -56,7 +56,7 @@
 	                <tr>
 	                  <th># of Trips</th>
 	                  <th>Driver Name</th>
-	                  <th>E-mail</th>
+	                  <th>Email</th>
 	                </tr>
 	              </thead>
 	              <tbody>
@@ -82,7 +82,7 @@
 	                <tr>
 	                  <th># of Trips</th>
 	                  <th>Passenger Name</th>
-	                  <th>E-mail</th>
+	                  <th>Email</th>
 	                </tr>
 	              </thead>
 	              <tbody>

@@ -53,7 +53,7 @@ export default {
 			}
 		},
 		Overview: function() {
-			this.title = 'All trips in the system';
+			this.title = 'All Trips';
 			this.type = 'A';
 			AXIOS.get(`/trips`)
 			.then(response => {
@@ -78,7 +78,7 @@ export default {
 			});
 		},
 		ActiveRoutes: function() {
-			this.title = 'Active Routes';
+			this.title = 'Route Overview';
 			this.type = 'B';
 			
 			var myenroute = "all";
@@ -110,7 +110,7 @@ export default {
 			});
 		},
 		ActiveDrivers: function() {
-			this.title = 'Active Drivers';
+			this.title = 'Driver Overview';
 			this.type = 'C';
 			
 			var myenroute = "all";
@@ -132,7 +132,7 @@ export default {
 			});
 		},
 		ActivePassengers: function() {
-			this.title = 'Active Passengers';
+			this.title = 'Passenger Overview';
 			this.type = 'D';
 			
 			var myenroute = this.picked;

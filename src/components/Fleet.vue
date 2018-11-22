@@ -37,13 +37,13 @@
 	              <a class="nav-link" v-bind:class="{ active: type === 'A' }" v-on:click="Overview" href="#">All Trips</a>
 	            </li>
 	            <li class="nav-item">
-	              <a class="nav-link" v-bind:class="{ active: type === 'B' }" v-on:click="ActiveRoutes" href="#">Active Routes</a>
+	              <a class="nav-link" v-bind:class="{ active: type === 'B' }" v-on:click="ActiveRoutes" href="#">Route Overview</a>
 	            </li>
 	            <li class="nav-item">
-	              <a class="nav-link" v-bind:class="{ active: type === 'C' }" v-on:click="ActiveDrivers" href="#">Active Drivers</a>
+	              <a class="nav-link" v-bind:class="{ active: type === 'C' }" v-on:click="ActiveDrivers" href="#">Driver Overview</a>
 	            </li>
 	            <li class="nav-item">
-	              <a class="nav-link" v-bind:class="{ active: type === 'D' }" v-on:click="ActivePassengers" href="#">Active Passengers</a>
+	              <a class="nav-link" v-bind:class="{ active: type === 'D' }" v-on:click="ActivePassengers" href="#">Passenger Overview</a>
 	            </li>
 	          </ul>
 	        </nav>
@@ -57,17 +57,17 @@
 	            <table class="table table-striped" >
 	              <thead>
 	                <tr>
-	                  <th width="11%">Completed</th>
+	                  <th width="11%">En Route</th>
 	                  <th width="15%">Driver</th>
 	                  <th width="11%">Date</th>
 	                  <th width="11%">Time</th>
 	                  <th>Departure</th>
-	                  <th>Destination</th>
+	                  <th>Destination(s)</th>
 	                </tr>
 	              </thead>
 	              <tbody>
 	                <tr v-for="trip in trips">
-	                  <td>{{ trip.isCompleted }}</td>
+	                  <td>{{ !trip.isCompleted }}</td>
 	                  <td>{{ trip.firstname }} {{ trip.lastname }}</td>
 	                  <td>{{ trip.departure_date }}</td>
 	                  <td>{{ trip.departure_time }}</td>
@@ -83,21 +83,21 @@
 	          
 	          <!-- For Active Routes -->
 	          <div class="table-responsive" v-else-if="type=='B'">
-	          Search by keyword: <input type="text" v-model="keyword" placeholder="">
+	          Search By City: <input type="text" v-model="keyword" placeholder="">
 	          <span>&nbsp; &nbsp;</span>
-						<input type="checkbox" v-model="enroute" value="enroute" checked>  Show enroute trips only
+						<input type="checkbox" v-model="enroute" value="enroute" checked>  Show en route trips only
 	          <span>&nbsp; &nbsp;</span>
 						<button type="button" class="btn btn-success" @click="filterByKeyword()">Update</button>
 	          
 	            <table class="table table-striped" >
 	              <thead>
 	                <tr>
-	                  <th width="11%">Active</th>
+	                  <th width="11%">En Route</th>
 	                  <th width="15%">Driver</th>
 	                  <th width="11%">Date</th>
 	                  <th width="11%">Time</th>
 	                  <th>Departure</th>
-	                  <th>Destination</th>
+	                  <th>Destination(s)</th>
 	                </tr>
 	              </thead>
 	              <tbody>
@@ -119,9 +119,9 @@
 
 	    	<!-- For Drivers -->
 	          <div class="table-responsive" v-if="type=='C'">
-	          Search by keyword:&nbsp; <input type="text" v-model="keyword" placeholder="">
+	          Search By Name:&nbsp; <input type="text" v-model="keyword" placeholder="">
 	          <span>&nbsp; &nbsp;</span>
-						<input type="checkbox" v-model="enroute" value="enroute" checked>  Show enroute drivers only
+						<input type="checkbox" v-model="enroute" value="enroute" checked>  Show en route drivers only
 	          <span>&nbsp; &nbsp;</span>
 						<button type="button" class="btn btn-success" @click="filterByKeyword()">Update</button>
 	          
@@ -145,16 +145,16 @@
 
 	    	<!-- For Passengers -->
 	          <div class="table-responsive" v-if="type=='D'">
-	          Search by keyword: &nbsp; <input class="form-group col-lg-2.9" type="text" v-model="keyword" placeholder=""><br />
+	          Search By Name: &nbsp; <input class="form-group col-lg-2.9" type="text" v-model="keyword" placeholder=""><br />
 	          
 	          <input type="radio" id="registered" value="registered" v-model="picked">
-	          <label for="registered">Registered &nbsp;</label>
+	          <label for="registered">All &nbsp;</label>
 	          
 	          <input type="radio" id="active" value="active" v-model="picked">
 	          <label for="active"> Active &nbsp; </label>
 	          
 	          <input type="radio" id="enroute" value="enroute" v-model="picked">
-	          <label for="enroute">Enroute &nbsp;</label>
+	          <label for="enroute">En Route &nbsp;</label>
 
 	          <button type="button" class="btn btn-success" @click="filterByKeyword()">Update</button>
 	          

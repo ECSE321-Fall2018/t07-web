@@ -74,7 +74,7 @@ export default {
 			});
 		}, 
 		TopRoutes: function () {
-			this.title = 'Top Routes';
+			this.title = 'Most Frequent Routes';
 			this.type = 'C';
 			AXIOS.post("/trips/ranking?startDate=" + this.startDate + "&endDate=" + this.endDate)
 			.then(response => {
