@@ -1,7 +1,7 @@
 # t07-web
 
-HOW TO USE:
--The Web Page can be found at the following link: https://ecse321-group7-web.herokuapp.com/#/
+HOW TO USE:  
+- The Web Page can be found at the following link: https://ecse321-group7-web.herokuapp.com/#/
 - The first time it is opened, it may take a few seconds for the data to populate on the page
 
 NOTE:
