@@ -3,6 +3,10 @@
 HOW TO USE:  
 - The Web Page can be found at the following link: https://ecse321-group7-web.herokuapp.com/#/
 - The first time it is opened, it may take a few seconds for the data to populate on the page
+- In addition, to be completely clear the filtering statuses mean the following:
+  - En Route - The specific trip is currently in progress (has not reached final destination)
+  - Active - The user (passenger) has been on at least one trip
+  - All - displays all users in the database
 
 NOTE:
 - Changes were also made to the backend as part of this Sprint 3, more details at the backend repository
