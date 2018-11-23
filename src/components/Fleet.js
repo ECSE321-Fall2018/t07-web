@@ -11,14 +11,6 @@ var AXIOS = axios.create({
   headers: { 'Access-Control-Allow-Origin': frontendUrl }
 })
 
-function tripdetails (name, date, time, dep, dest) {
-	this.name = name;
-	this.date = date;
-	this.time = time;
-	this.dep = dep;
-	this.dest = dest;
-}
-
 export default {
   name: 'Fleet',
   data () {
@@ -28,9 +20,9 @@ export default {
       passengers: [],	// also user-based list (Passenger)
       type: 'A',		// this enables 'active' style for tab
       title: 'Overview',		// page title h1
-      keyword: '',
-      enroute: '',
-      picked: 'registered'
+      keyword: '',	// keyword textbox
+      enroute: '',	// enroute checkbox (Routes)
+      picked: 'registered'	// registered radio select (Passenger)
     }
   },
 
@@ -62,11 +54,12 @@ export default {
 			.then(response => {
 				// JSON responses are automatically parsed.
 				this.trips = response.data
+				// Backend returns all small characters so capitalize first
 				for (var i=0; i<this.trips.length; i++) {
 					this.trips[i].departure_location = this.trips[i].departure_location.charAt(0).toUpperCase() + this.trips[i].departure_location.slice(1);
 					this.trips[i].firstname = this.trips[i].firstname.charAt(0).toUpperCase() + this.trips[i].firstname.slice(1);
 					this.trips[i].lastname = this.trips[i].lastname.charAt(0).toUpperCase() + this.trips[i].lastname.slice(1);
-					
+					// nested destinations array
 					for (var j=0; j<this.trips[i].destinations.length; j++) {
 						this.trips[i].destinations[j] = this.trips[i].destinations[j].charAt(0).toUpperCase() + this.trips[i].destinations[j].slice(1);
 
@@ -88,6 +81,7 @@ export default {
 			
 			var myenroute = "all";
 			
+			// parse checkbox items
 			if (this.enroute) {
 				myenroute = "enroute";
 			}
@@ -96,6 +90,8 @@ export default {
 			.then(response => {
 				// JSON responses are automatically parsed.
 				this.trips = response.data
+				
+				// Capitalize
 				for (var i=0; i<this.trips.length; i++) {
 					this.trips[i].departure_location = this.trips[i].departure_location.charAt(0).toUpperCase() + this.trips[i].departure_location.slice(1);
 					this.trips[i].firstname = this.trips[i].firstname.charAt(0).toUpperCase() + this.trips[i].firstname.slice(1);
@@ -105,7 +101,7 @@ export default {
 						this.trips[i].destinations[j] = this.trips[i].destinations[j].charAt(0).toUpperCase() + this.trips[i].destinations[j].slice(1);
 
 						if (j != this.trips[i].destinations.length-1) {
-							this.trips[i].destinations[j] += ", ";
+							this.trips[i].destinations[j] += ", ";	// split destinations
 						}
 					}
 				}
@@ -129,6 +125,7 @@ export default {
 			.then(response => {
 				// JSON responses are automatically parsed.
 				this.drivers = response.data
+				// Capitalize
 				for (var i=0; i<this.drivers.length; i++) {
 					this.drivers[i].firstname = this.drivers[i].firstname.charAt(0).toUpperCase() + this.drivers[i].firstname.slice(1);
 					this.drivers[i].lastname = this.drivers[i].lastname.charAt(0).toUpperCase() + this.drivers[i].lastname.slice(1);
@@ -150,6 +147,7 @@ export default {
 			.then(response => {
 				// JSON responses are automatically parsed.
 				this.passengers = response.data
+				//Capitalize
 				for (var i=0; i<this.passengers.length; i++) {
 					this.passengers[i].firstname = this.passengers[i].firstname.charAt(0).toUpperCase() + this.passengers[i].firstname.slice(1);
 					this.passengers[i].lastname = this.passengers[i].lastname.charAt(0).toUpperCase() + this.passengers[i].lastname.slice(1);
