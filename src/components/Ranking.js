@@ -43,6 +43,7 @@ export default {
 		TopDrivers: function() {
 			this.title = 'Top Performing Drivers';
 			this.type = 'A';
+			this.loading = true;
 			
 			AXIOS.post("/drivers/ranking?startDate=" + this.startDate + "&endDate=" + this.endDate)
 			.then(response => {
@@ -52,6 +53,7 @@ export default {
 					this.drivers[i].firstname = this.drivers[i].firstname.charAt(0).toUpperCase() + this.drivers[i].firstname.slice(1);
 					this.drivers[i].lastname = this.drivers[i].lastname.charAt(0).toUpperCase() + this.drivers[i].lastname.slice(1);
 				}
+				this.loading = false;
 			})
 			.catch(e => {
 				this.errorParticipant = e;
@@ -60,6 +62,7 @@ export default {
 		TopPassengers: function () {
 			this.title = 'Top Performing Passengers';
 			this.type = 'B';
+			this.loading = true;
 			AXIOS.post("/passengers/ranking?startDate=" + this.startDate + "&endDate=" + this.endDate)
 			.then(response => {
 				// JSON responses are automatically parsed.
@@ -68,6 +71,7 @@ export default {
 					this.passengers[i].firstname = this.passengers[i].firstname.charAt(0).toUpperCase() + this.passengers[i].firstname.slice(1);
 					this.passengers[i].lastname = this.passengers[i].lastname.charAt(0).toUpperCase() + this.passengers[i].lastname.slice(1);
 				}
+				this.loading = false;
 			})
 			.catch(e => {
 				this.errorParticipant = e;
@@ -76,6 +80,7 @@ export default {
 		TopRoutes: function () {
 			this.title = 'Most Frequent Routes';
 			this.type = 'C';
+			this.loading = true;
 			AXIOS.post("/trips/ranking?startDate=" + this.startDate + "&endDate=" + this.endDate)
 			.then(response => {
 				// JSON responses are automatically parsed.
@@ -91,6 +96,7 @@ export default {
 						}
 					}
 				}
+				this.loading = false;
 			})
 			.catch(e => {
 				this.errorParticipant = e;

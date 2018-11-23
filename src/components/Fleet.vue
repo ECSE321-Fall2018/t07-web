@@ -1,10 +1,6 @@
 <template>
 	<div id="contents">
 
-		<div id="load_screen">
-			<div id="loading"> loading... </div>
-  	</div>
-
 	  <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
       <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -51,7 +47,7 @@
 	    </div>
 	    <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
 	    	<h1>{{ title }}</h1>
-	    	
+	    								
 	    	<!-- For Overview -->
 	          <div class="table-responsive" v-if="type=='A'">
 	            <table class="table table-striped" >
@@ -67,7 +63,10 @@
 	              </thead>
 	              <tbody>
 	                <tr v-for="trip in trips">
-	                  <td>{{ !trip.isCompleted }}</td>
+	                  <td> 
+											<img src="../assets/img/checkmark.png" v-if="trip.isCompleted==false"/> 
+											<img src="../assets/img/crossmark1-hi.png" v-if="trip.isCompleted"/> 
+										</td>
 	                  <td>{{ trip.firstname }} {{ trip.lastname }}</td>
 	                  <td>{{ trip.departure_date }}</td>
 	                  <td>{{ trip.departure_time }}</td>
@@ -83,11 +82,11 @@
 	          
 	          <!-- For Active Routes -->
 	          <div class="table-responsive" v-else-if="type=='B'">
-	          Search By City: <input type="text" v-model="keyword" placeholder="">
+	          Search By City: &nbsp;<input type="text" v-model="keyword" placeholder="">
 	          <span>&nbsp; &nbsp;</span>
 						<input type="checkbox" v-model="enroute" value="enroute" checked>  Show en route trips only
 	          <span>&nbsp; &nbsp;</span>
-						<button type="button" class="btn btn-success" @click="filterByKeyword()">Update</button>
+						<button type="button" class="btn btn-primary" @click="filterByKeyword()">Update</button>
 	          
 	            <table class="table table-striped" >
 	              <thead>
@@ -102,14 +101,16 @@
 	              </thead>
 	              <tbody>
 	                <tr v-for="trip in trips">
-	                  <td>{{ !trip.isCompleted }}</td>
+	                  <td>
+											<img src="../assets/img/checkmark.png" v-if="trip.isCompleted==false"/> 
+											<img src="../assets/img/crossmark1-hi.png" v-if="trip.isCompleted"/> 
+										</td>
 	                  <td>{{ trip.firstname }} {{ trip.lastname }}</td>
 	                  <td>{{ trip.departure_date }}</td>
 	                  <td>{{ trip.departure_time }}</td>
 	                  <td>{{ trip.departure_location }}</td>
 	                  <td>
 	                  	<span v-for="destination in trip.destinations">{{ destination }}</span>
-
 	                  </td>
 	                </tr>
 	              </tbody>
@@ -123,7 +124,7 @@
 	          <span>&nbsp; &nbsp;</span>
 						<input type="checkbox" v-model="enroute" value="enroute" checked>  Show en route drivers only
 	          <span>&nbsp; &nbsp;</span>
-						<button type="button" class="btn btn-success" @click="filterByKeyword()">Update</button>
+						<button type="button" class="btn btn-primary" @click="filterByKeyword()">Update</button>
 	          
 	            <table class="table table-striped" >
 	              <thead>
@@ -156,7 +157,7 @@
 	          <input type="radio" id="enroute" value="enroute" v-model="picked">
 	          <label for="enroute">En Route &nbsp;</label>
 
-	          <button type="button" class="btn btn-success" @click="filterByKeyword()">Update</button>
+	          <button type="button" class="btn btn-primary" @click="filterByKeyword()">Update</button>
 	          
 	            <table class="table table-striped" >
 	              <thead>
@@ -175,12 +176,15 @@
 	              </tbody>
 	            </table>
 	          </div>
-  
+						
+						<div class="loader" v-if="loading"></div>  
 	    </main>
 	</div>
 </template>
 
-<style></style>
+<style>
+	@import url("../assets/css/loading.css");
+</style>
 
 <script src="./Fleet.js">
 </script>

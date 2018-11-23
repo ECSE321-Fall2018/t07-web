@@ -1,4 +1,5 @@
 import axios from 'axios'
+import "../assets/css/loading.css"
 
 var config = require('../../config')
 
@@ -32,10 +33,11 @@ export default {
       picked: 'registered'
     }
   },
+
   created: function () {
-  		this.type = 'A';
-  		this.title = 'Overview';
-  		this.Overview();
+
+		this.type = 'A';
+		this.Overview();
 	}, 
 	methods: {
 		filterByKeyword: function () {
@@ -54,6 +56,7 @@ export default {
 		},
 		Overview: function() {
 			this.title = 'All Trips';
+			this.loading = true;
 			this.type = 'A';
 			AXIOS.get(`/trips`)
 			.then(response => {
@@ -72,13 +75,15 @@ export default {
 						}
 					}
 				}
-			})
+				this.loading = false;
+			},)
 			.catch(e => {
 				this.errorParticipant = e;
 			});
 		},
 		ActiveRoutes: function() {
 			this.title = 'Route Overview';
+			this.loading = true;
 			this.type = 'B';
 			
 			var myenroute = "all";
@@ -104,6 +109,7 @@ export default {
 						}
 					}
 				}
+				this.loading = false;
 			})
 			.catch(e => {
 				this.errorParticipant = e;
@@ -112,6 +118,7 @@ export default {
 		ActiveDrivers: function() {
 			this.title = 'Driver Overview';
 			this.type = 'C';
+			this.loading = true;
 			
 			var myenroute = "all";
 			if (this.enroute) {
@@ -126,6 +133,7 @@ export default {
 					this.drivers[i].firstname = this.drivers[i].firstname.charAt(0).toUpperCase() + this.drivers[i].firstname.slice(1);
 					this.drivers[i].lastname = this.drivers[i].lastname.charAt(0).toUpperCase() + this.drivers[i].lastname.slice(1);
 				}
+				this.loading = false;
 			})
 			.catch(e => {
 				this.errorParticipant = e;
@@ -134,7 +142,8 @@ export default {
 		ActivePassengers: function() {
 			this.title = 'Passenger Overview';
 			this.type = 'D';
-			
+			this.loading = true;
+
 			var myenroute = this.picked;
 						
 			AXIOS.post("/users/search/partialPassenger?keyword=" + this.keyword + "&status=" + myenroute)
@@ -145,13 +154,15 @@ export default {
 					this.passengers[i].firstname = this.passengers[i].firstname.charAt(0).toUpperCase() + this.passengers[i].firstname.slice(1);
 					this.passengers[i].lastname = this.passengers[i].lastname.charAt(0).toUpperCase() + this.passengers[i].lastname.slice(1);
 				}
+				this.loading = false;
 			})
 			.catch(e => {
 				this.errorParticipant = e;
 			});
-		}
+		},
 	}
 }
+
 
 
 

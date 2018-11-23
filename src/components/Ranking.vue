@@ -49,7 +49,7 @@
 	          <span>&nbsp; &nbsp;</span>
 						To: <input type="date" v-model="endDate" placeholder="YYYY-MM-DD">
 	          <span>&nbsp; &nbsp;</span>
-						<button type="button" class="btn btn-success" @click="filterByDate()">Update</button>
+						<button type="button" class="btn btn-primary" @click="filterByDate()">Update</button>
 	          
 	            <table class="table table-striped">
 	              <thead>
@@ -75,7 +75,7 @@
 	          <span>&nbsp; &nbsp;</span>
 						To: <input type="date" v-model="endDate" placeholder="YYYY-MM-DD">
 	          <span>&nbsp; &nbsp;</span>
-						<button type="button" class="btn btn-success" @click="filterByDate()">Update</button>
+						<button type="button" class="btn btn-primary" @click="filterByDate()">Update</button>
 	          
 	            <table class="table table-striped">
 	              <thead>
@@ -101,7 +101,7 @@
 	          <span>&nbsp; &nbsp;</span>
 						To: <input type="date" v-model="endDate" placeholder="YYYY-MM-DD">
 	          <span>&nbsp; &nbsp;</span>
-						<button type="button" class="btn btn-success" @click="filterByDate()">Update</button>
+						<button type="button" class="btn btn-primary" @click="filterByDate()">Update</button>
 	          
 	            <table class="table table-striped">
 	              <thead>
@@ -123,12 +123,13 @@
 	              </tbody>
 	            </table>
 	          </div>	   
-	          
+	          <div class="loader" v-if="loading"></div> 
 	    </main>
 	</div>
 </template>
 
 <style>
+		@import url("../assets/css/loading.css");
 </style>
 
 <script src="./Ranking.js"></script>
