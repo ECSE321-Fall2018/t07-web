@@ -11,6 +11,8 @@ NOTE:
 ### Changelog
 Nov. 22, 2018: (Frontend)
 - Minor changes to wording and text presentation across the different views of the web page
+- Minor changes to UI (button, checkmark/crossmark instead of "true/false")
+- Add loading spinner
 
 Nov. 19, 2018: (Frontend)
 - Minor typo fixes to some of the text
